@@ -8,6 +8,8 @@ import { MainBoardComponent } from './main-board/main-board.component';
 import { ReactiveFormsModule, FormGroup, FormsModule } from '@angular/forms';
 import { AddAdminComponent } from './add-admin/add-admin.component';
 import { CreateAdminComponent } from './create-admin/create-admin.component';
+import {HttpClientModule} from '@angular/common/http';
+import {Addadminservice} from '../app/services/addadminservice';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,11 @@ import { CreateAdminComponent } from './create-admin/create-admin.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    Addadminservice
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -175,11 +175,11 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="gridCheck">
                                 <label class="form-check-label" for="gridCheck">
-                                    Check me out
+                                    I Agreed
                                 </label>
                             </div>
                         </div>
-                        <button type="submit" [disabled]="!formCreateAdmin.valid" class="btn btn-primary col-md-6">Create</button>
+                        <button type="submit" [disabled]="!formCreateAdmin.valid" (click)="saveAdmin()" class="btn btn-primary col-md-6">Create</button>
                         <br>
                         <br>
                         <button type="button" class="btn danger col-md-6 ">Discard</button>
