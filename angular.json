@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "admin-hms"
+    }
+  },
+  "defaultProject": "admin-hms",
+  "cli": {
+    "analytics": false
+  }
 }
