@@ -32,6 +32,7 @@
         </ul>
     </nav>
 
+    <!-- <form [formGroup]="formMaintaince"> -->
     <div class="container-fluid mt-4">
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar ">
@@ -41,7 +42,7 @@
                             <a class="nav-link active" href="#">
                                 <span data-feather="home"></span>
                                 <i class="fas fa-allergies mr-2" routerLink="/main" routerLinkActive="active"></i>
-                                Dashboard <span class="sr-only"></span>
+                                Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -115,12 +116,14 @@
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h3>Create New User as Admin</h3>
+                    <h1 class="h2">Charges & Pay Settings</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group mr-2">
-                            <button class="btn btn-sm btn-outline-secondary" routerLink="/add-admin"
-                                routerLinkActive="active">Show Admin Panel</button>
-                            <button class="btn btn-sm btn-outline-secondary">Export</button>
+                            <button class="btn btn-sm btn-outline-secondary" routerLink="/charges"
+                                routerLinkActive="active">Charges & Pay </button>
+                                <button class="btn btn-sm btn-outline-secondary" routerLink="/category"
+                                routerLinkActive="active">Category Main</button>
+                            <button class="btn btn-sm btn-outline-secondary">Reports Main</button>
                         </div>
                         <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
                             <span data-feather="calendar"></span>
@@ -129,55 +132,20 @@
                     </div>
                 </div>
 
-                <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
+                <div class="my-4 w-100" id="myChart" width="900" height="200">
 
-                <div class="my-4 w-100" id="myChart" width="900" height="380">
-                    <form [formGroup]="formCreateAdmin" class="form-horizontal" action='' method="POST">
+                    <form [formGroup]="formCharge" class="form-horizontal" action='' method="POST">
                         <div class="form-row">
                             <div class="form-group col-md-8">
-                                <label for="inputName">Name</label>
-                                <input type="text" formControlName="name" class="form-control" id="inputName"
-                                    placeholder="name">
+                                <label for="inputName">Value Of Charge</label>
+                                <input type="text" formControlName="value" class="form-control" id="inputName"
+                                    placeholder="1000.00">
                             </div>
                             <div class="form-group col-md-8">
-                                <label for="inputEmail4">Email</label>
-                                <input type="email" formControlName="mail" class="form-control" id="inputEmail4"
-                                    placeholder="email">
+                                <label for="inputEmail4">Description</label>
+                                <input type="text" formControlName="desc" class="form-control" id="inputEmail4"
+                                    placeholder="description">
                             </div>
-                            <div class="form-group col-md-5">
-                                <label for="inputPassword4">Password</label>
-                                <input type="password" formControlName="password" class="form-control"
-                                    id="inputPassword4" placeholder="password">
-                            </div>
-                            <div class="form-group col-md-5">
-                                <label for="inputRePassword">Re Enter Password</label>
-                                <input type="password" formControlName="repassword" class="form-control"
-                                    id="inputRePassword" placeholder="re-enter Password">
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input mt-5" formControlName="checklbl" type="checkbox" id="gridCheck">
-                            </div>
-                           
-                            <div class="form-group col-md-6">
-                                <label for="inputEmail4">Contact</label>
-                                <input type="text" formControlName="contact" class="form-control" id="inputMobile"
-                                    placeholder="contact">
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="inputZip">NIC</label>
-                                <input type="text" formControlName="nic" class="form-control" id="inputNic">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-2">
-                                <label for="inputState">Gender</label>
-                                <select id="inputState" formControlName="gender" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                </select>
-                            </div>
-
                         </div>
                         <div class="form-group">
                             <div class="form-check">
@@ -187,18 +155,148 @@
                                 </label>
                             </div>
                         </div>
-                        <button type="submit" [disabled]="!formCreateAdmin.valid" (click)="saveAdmin()"
-                            class="btn btn-primary col-md-6">Create</button>
+                        <button type="submit" [disabled]="!formCharge.valid" (click)="saveCharge()"
+                            class="btn btn-primary col-md-8">Create</button>
                         <br>
+
                         <br>
-                        <button type="button" class="btn danger col-md-6 ">Discard</button>
+                        <button type="button" class="btn danger col-md-8">Discard</button>
                     </form>
+
                 </div>
 
+                <h2>Section title</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Header</th>
+                                <th>Header</th>
+                                <th>Header</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1,001</td>
+                                <td>Lorem</td>
+                                <td>ipsum</td>
+                                <td>dolor</td>
+                                <td>sit</td>
+                            </tr>
+                            <tr>
+                                <td>1,002</td>
+                                <td>amet</td>
+                                <td>consectetur</td>
+                                <td>adipiscing</td>
+                                <td>elit</td>
+                            </tr>
+                            <tr>
+                                <td>1,003</td>
+                                <td>Integer</td>
+                                <td>nec</td>
+                                <td>odio</td>
+                                <td>Praesent</td>
+                            </tr>
+                            <tr>
+                                <td>1,003</td>
+                                <td>libero</td>
+                                <td>Sed</td>
+                                <td>cursus</td>
+                                <td>ante</td>
+                            </tr>
+                            <tr>
+                                <td>1,004</td>
+                                <td>dapibus</td>
+                                <td>diam</td>
+                                <td>Sed</td>
+                                <td>nisi</td>
+                            </tr>
+                            <tr>
+                                <td>1,005</td>
+                                <td>Nulla</td>
+                                <td>quis</td>
+                                <td>sem</td>
+                                <td>at</td>
+                            </tr>
+                            <tr>
+                                <td>1,006</td>
+                                <td>nibh</td>
+                                <td>elementum</td>
+                                <td>imperdiet</td>
+                                <td>Duis</td>
+                            </tr>
+                            <tr>
+                                <td>1,007</td>
+                                <td>sagittis</td>
+                                <td>ipsum</td>
+                                <td>Praesent</td>
+                                <td>mauris</td>
+                            </tr>
+                            <tr>
+                                <td>1,008</td>
+                                <td>Fusce</td>
+                                <td>nec</td>
+                                <td>tellus</td>
+                                <td>sed</td>
+                            </tr>
+                            <tr>
+                                <td>1,009</td>
+                                <td>augue</td>
+                                <td>semper</td>
+                                <td>porta</td>
+                                <td>Mauris</td>
+                            </tr>
+                            <tr>
+                                <td>1,010</td>
+                                <td>massa</td>
+                                <td>Vestibulum</td>
+                                <td>lacinia</td>
+                                <td>arcu</td>
+                            </tr>
+                            <tr>
+                                <td>1,011</td>
+                                <td>eget</td>
+                                <td>nulla</td>
+                                <td>Class</td>
+                                <td>aptent</td>
+                            </tr>
+                            <tr>
+                                <td>1,012</td>
+                                <td>taciti</td>
+                                <td>sociosqu</td>
+                                <td>ad</td>
+                                <td>litora</td>
+                            </tr>
+                            <tr>
+                                <td>1,013</td>
+                                <td>torquent</td>
+                                <td>per</td>
+                                <td>conubia</td>
+                                <td>nostra</td>
+                            </tr>
+                            <tr>
+                                <td>1,014</td>
+                                <td>per</td>
+                                <td>inceptos</td>
+                                <td>himenaeos</td>
+                                <td>Curabitur</td>
+                            </tr>
+                            <tr>
+                                <td>1,015</td>
+                                <td>sodales</td>
+                                <td>ligula</td>
+                                <td>in</td>
+                                <td>libero</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </main>
         </div>
     </div>
-
+    <!-- </form> -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

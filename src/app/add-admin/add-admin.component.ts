@@ -7,7 +7,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./add-admin.component.css']
 })
 export class AddAdminComponent implements OnInit {
-  formAddAdmin: FormGroup;
+  // formAddAdmin: FormGroup;
 
   constructor() { }
 

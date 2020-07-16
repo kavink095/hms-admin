@@ -32,7 +32,7 @@
         </ul>
     </nav>
 
-    <form [formGroup]="formMain">
+    <!-- <form [formGroup]="formMain"> -->
         <div class="container-fluid mt-4">
             <div class="row">
                 <nav class="col-md-2 d-none d-md-block bg-light sidebar ">
@@ -52,7 +52,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a routerLink="/addDoc" routerLinkActive="active" class="nav-link" href="#">
                                     <span data-feather="shopping-cart"></span>
                                     <i class="fas fa-user-md mr-2"></i>Doctors
                                 </a>
@@ -98,7 +98,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a routerLink="/maintaince" routerLinkActive="active" class="nav-link" href="#">
                                     <span data-feather="file-text"></span>
                                     <i class="fas fa-edit mr-2"></i> Maintaince
                                 </a>
@@ -262,7 +262,7 @@
                 </main>
             </div>
         </div>
-    </form>
+    <!-- </form> -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

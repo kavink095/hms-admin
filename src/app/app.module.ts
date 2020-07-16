@@ -10,13 +10,25 @@ import { AddAdminComponent } from './add-admin/add-admin.component';
 import { CreateAdminComponent } from './create-admin/create-admin.component';
 import {HttpClientModule} from '@angular/common/http';
 import {Addadminservice} from '../app/services/addadminservice';
+import {Chargeservice} from '../app/services/chargeservice';
+import {Categoryservice} from '../app/services/categoryservice';
+import {Adddoctorservice} from '../app/services/adddoctorservice';
+
+import { MaintainceComponent } from './maintaince/maintaince.component';
+import { ChargesComponent } from './charges/charges.component';
+import { CategoryComponent } from './category/category.component';
+import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainBoardComponent,
     AddAdminComponent,
-    CreateAdminComponent
+    CreateAdminComponent,
+    MaintainceComponent,
+    ChargesComponent,
+    CategoryComponent,
+    AddDoctorComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +38,10 @@ import {Addadminservice} from '../app/services/addadminservice';
     HttpClientModule,
   ],
   providers: [
-    Addadminservice
+    Addadminservice,
+    Chargeservice,
+    Categoryservice,
+    Adddoctorservice
   ],
   bootstrap: [AppComponent]
 })

@@ -7,7 +7,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./main-board.component.css']
 })
 export class MainBoardComponent implements OnInit {
-  formMain: FormGroup;
+  // formMain: FormGroup;
 
   constructor() { }
 
