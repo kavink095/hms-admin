@@ -4,6 +4,7 @@ import { Adddoctorservice } from '../services/adddoctorservice';
 import { Addadminservice } from '../services/addadminservice';
 import { AddDoctorDTO } from '../dtos/add-doctorDTO';
 import { AdminDTO } from '../dtos/adminDTO';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-add-doctor',
@@ -15,10 +16,15 @@ export class AddDoctorComponent implements OnInit {
   // tslint:disable-next-line: new-parens
   addDoc: AddDoctorDTO = new AddDoctorDTO;
   admins: Array<AdminDTO> = [];
+  adminss: Observable<AdminDTO[]>;
+
   selectedcategories: AdminDTO = new AdminDTO();
   tempcat: AdminDTO = null;
 
-  constructor(private adddocservice: Adddoctorservice, private adminservices: Addadminservice) { }
+  constructor(private adddocservice: Adddoctorservice, private adminservices: Addadminservice) {
+
+   }
+
   formAddDoc = new FormGroup({
     id: new FormControl('', Validators.required),
     fName: new FormControl('', Validators.required),
@@ -34,6 +40,7 @@ export class AddDoctorComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.reloadData();
   }
 
   saveDoctor(): void {
@@ -67,13 +74,18 @@ export class AddDoctorComponent implements OnInit {
     );
   }
 
-  loadAllAdmins(): void {
-    this.adminservices.getAllAdmins().subscribe(
-      (result) => {
-        this.admins = result;
-        console.log(this.admins);
-      }
-    );
+  // loadAllAdmins(): void {
+  //   this.adminservices.getAllAdmins().subscribe(
+  //     (result) => {
+  //       console.log(this.admins);
+  //       this.admins = result;
+  //       console.log(this.admins);
+  //     }
+  //   );
+  // }
+  // tslint:disable-next-line: typedef
+  reloadData() {
+    this.adminss = this.adminservices.getEmployeesList();
   }
 
 }

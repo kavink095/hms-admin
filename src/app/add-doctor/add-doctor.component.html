@@ -54,7 +54,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="shopping-cart"></span>
-                                <i routerLink="/addDoc" routerLinkActive="active" class="fas fa-user-md mr-2"></i>Doctors
+                                <i routerLink="/addDoc" routerLinkActive="active"
+                                    class="fas fa-user-md mr-2"></i>Doctors
                             </a>
                         </li>
                         <li class="nav-item">
@@ -122,7 +123,7 @@
                             <button class="btn btn-sm btn-outline-secondary" routerLink="/charges"
                                 routerLinkActive="active">Charges & Pay </button>
                             <button class="btn btn-sm btn-outline-secondary" routerLink="/category"
-                            routerLinkActive="active">Category Main</button>
+                                routerLinkActive="active">Category Main</button>
                             <button class="btn btn-sm btn-outline-secondary">Reports Main</button>
                         </div>
                         <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
@@ -137,18 +138,18 @@
                     <form [formGroup]="formAddDoc" class="form-horizontal" action='' method="POST">
                         <div class="form-row">
                             <div class="form-group col-md-8">
-                                <label for="inputName">Doctor NIC</label>
-                                <input type="text" formControlName="id" class="form-control" id="inputName"
+                                <label for="inputid">Doctor NIC</label>
+                                <input type="text" formControlName="id" class="form-control" id="inputid"
                                     placeholder="doctor id">
                             </div>
                             <div class="form-group col-md-8">
-                                <label for="inputEmail4">First Name</label>
-                                <input type="text" formControlName="fName" class="form-control" id="inputEmail4"
+                                <label for="inputfName">First Name</label>
+                                <input type="text" formControlName="fName" class="form-control" id="inputfName"
                                     placeholder="name first">
                             </div>
                             <div class="form-group col-md-8">
-                                <label for="inputEmail4">Last Name</label>
-                                <input type="text" formControlName="lName" class="form-control" id="inputEmail4"
+                                <label for="inputLname">Last Name</label>
+                                <input type="text" formControlName="lName" class="form-control" id="inputLname"
                                     placeholder="name last">
                             </div>
                             <div class="form-group col-md-8">
@@ -157,46 +158,62 @@
                                     placeholder="doctor mail">
                             </div>
                             <div class="form-group col-md-8">
-                                <label for="inputEmail4">Contact</label>
-                                <input type="text" formControlName="contact" class="form-control" id="inputEmail4"
+                                <label for="inputContact">Contact</label>
+                                <input type="text" formControlName="contact" class="form-control" id="inputContact"
                                     placeholder="doctor mobile">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-2">
-                                <label for="inputState">Charge ID</label>
-                                <select id="inputState" formControlName="chargeid" class="form-control">
+                                <label for="inputcs">Charge ID</label>
+                                <select id="inputcs" formControlName="chargeid" class="form-control">
                                     <option selected>Choose...</option>
                                     <!-- <option>Male</option>
                                     <option>Female</option> -->
                                 </select>
                             </div>
                             <div class="form-group col-md-2">
-                                <label for="inputEmail4">Value</label>
-                                <input type="text" formControlName="value" class="form-control" id="inputEmail4"
+                                <label for="inputval">Value</label>
+                                <input type="text" formControlName="value" class="form-control" id="inputval"
                                     placeholder="value">
                             </div>
                             <div class="form-group col-md-2">
-                                <label for="inputState">Add Doctor for Category</label>
-                                <select id="inputState" formControlName="category" class="form-control">
+                                <label for="inputCtate">Add Doctor for Category</label>
+                                <select id="inputCtate" formControlName="category" class="form-control">
                                     <option selected>Choose...</option>
                                     <!-- <option>Male</option>
                                     <option>Female</option> -->
                                 </select>
                             </div>
                             <div class="form-group col-md-2">
-                                <label for="inputEmail4">Category ID</label>
-                                <input type="text" formControlName="catid" class="form-control" id="inputEmail4"
+                                <label for="inputcat">Category ID</label>
+                                <input type="text" formControlName="catid" class="form-control" id="inputcat"
                                     placeholder="category by id">
                             </div>
-                            <div class="form-group col-md-2">
-                                <label for="inputState">Admin NIC</label>
-                                <select *ngFor="let admin of admins" id="inputState" formControlName="adminid" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>{{admin.adNIC}}</option>
-                                    <!-- <option>Female</option>  -->
-                                </select>
-                            </div>
+                            <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Email</th>
+                                    <th>Actions</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let admin of adminss | async">
+                                    <td>{{admin.adNIC}}</td>
+                                    <td>{{admin.adName}}</td>
+                                    <td>{{admin.adMobile}}</td>
+                                    <!-- <td></td>
+                                    <td></td>
+                                    <td></td> -->
+                                    <td><button  class="btn btn-danger">Delete</button>
+                                        <!-- <button (click)="updateEmployee(employee.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+                                        <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Details</button> *ngFor="let admin of admins"-->
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
 
                         </div>
                         <div class="form-group">
