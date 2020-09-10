@@ -18,6 +18,7 @@ import { MaintainceComponent } from './maintaince/maintaince.component';
 import { ChargesComponent } from './charges/charges.component';
 import { CategoryComponent } from './category/category.component';
 import { AddDoctorComponent } from './add-doctor/add-doctor.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddDoctorComponent } from './add-doctor/add-doctor.component';
     MaintainceComponent,
     ChargesComponent,
     CategoryComponent,
-    AddDoctorComponent
+    AddDoctorComponent,
+    AppointmentComponent
   ],
   imports: [
     BrowserModule,

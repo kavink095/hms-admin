@@ -8,6 +8,7 @@ import { ChargesComponent } from './charges/charges.component';
 import { CategoryComponent } from './category/category.component';
 import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 import { AddDoctorDTO } from './dtos/add-doctorDTO';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'charges', component: ChargesComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'addDoc', component: AddDoctorComponent },
+  { path: 'apoi', component: AppointmentComponent },
   { path: '', redirectTo: '/main', pathMatch: 'full' },
 ];
 
