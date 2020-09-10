@@ -42,7 +42,7 @@
                             <a class="nav-link active" href="#">
                                 <span data-feather="home"></span>
                                 <i class="fas fa-allergies mr-2" routerLink="/main" routerLinkActive="active"></i>
-                                Dashboard <span class="sr-only">(current)</span>
+                                Dashboard <span class="sr-only"></span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -193,33 +193,7 @@
                         </div>
 
 
-                        <h2>Admin Panel</h2>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-sm">
-                                <thead>
-                                    <tr>
-                                        <th>Firstname</th>
-                                        <th>Lastname</th>
-                                        <th>Email</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let admin of adminss | async">
-                                        <td>{{admin.adNIC}}</td>
-                                        <td>{{admin.adName}}</td>
-                                        <td>{{admin.adMobile}}</td>
-                                        <!-- <td></td>
-                                <td></td>
-                                <td></td> -->
-                                        <td><button class="btn btn-danger">Delete</button>
-                                            <!-- <button (click)="updateEmployee(employee.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
-                                    <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Details</button> *ngFor="let admin of admins"-->
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+        
 
                         <div class="form-group">
                             <div class="form-check">

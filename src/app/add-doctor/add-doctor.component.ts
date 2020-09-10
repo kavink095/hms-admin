@@ -21,7 +21,7 @@ export class AddDoctorComponent implements OnInit {
   selectedcategories: AdminDTO = new AdminDTO();
   tempcat: AdminDTO = null;
 
-  constructor(private adddocservice: Adddoctorservice, private adminservices: Addadminservice) {
+  constructor(private adddocservice: Adddoctorservice) {
 
    }
 
@@ -40,7 +40,7 @@ export class AddDoctorComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.reloadData();
+
   }
 
   saveDoctor(): void {
@@ -84,8 +84,6 @@ export class AddDoctorComponent implements OnInit {
   //   );
   // }
   // tslint:disable-next-line: typedef
-  reloadData() {
-    this.adminss = this.adminservices.getEmployeesList();
-  }
+
 
 }
