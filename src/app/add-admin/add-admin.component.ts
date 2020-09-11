@@ -25,7 +25,7 @@ export class AddAdminComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   reloadData() {
-    this.adminss = this.adminservices.getEmployeesList();
+    this.adminss = this.adminservices.getAdminsList();
   }
 
 }
