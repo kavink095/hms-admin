@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import { AdminDTO } from '../dtos/adminDTO';
 
 export const MAIN_URL = 'http://localhost:8084';
-const urls = '/api/v1/appointment';
-const URL = '/api/v1/admins/saves';
+const urls = '/api/v1/appointment/list';
+const URL = '/api/v1/appointment/saves';
 
 // const baseUrl = 'localhost:8084/api/v1/admins';
 

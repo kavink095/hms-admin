@@ -17,6 +17,7 @@ export class ChargesComponent implements OnInit {
   chargeList: Array<ChargesDTO> = [];
 
   formCharge = new FormGroup({
+    cid: new FormControl('', Validators.required),
     value: new FormControl('', Validators.required),
     desc: new FormControl('', Validators.required),
     check: new FormControl('', Validators.required),
@@ -26,6 +27,7 @@ export class ChargesComponent implements OnInit {
   }
 
   saveCharge(): void {
+    this.charges.cID = this.formCharge.get('cid').value;
     this.charges.cValue = this.formCharge.get('value').value;
     this.charges.cDesc = this.formCharge.get('desc').value;
 
@@ -35,6 +37,7 @@ export class ChargesComponent implements OnInit {
         if (result || !Validators === null) {
           console.log(this.charges);
           alert('New payment value has been saved successfully..');
+          this.formCharge.get('cid').setValue('');
           this.formCharge.get('value').setValue('');
           this.formCharge.get('desc').setValue('');
           this.formCharge.get('check').setValue('');

@@ -19,6 +19,7 @@ import { ChargesComponent } from './charges/charges.component';
 import { CategoryComponent } from './category/category.component';
 import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { AppointmentService } from './services/appointmentService';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AppointmentComponent } from './appointment/appointment.component';
     Addadminservice,
     Chargeservice,
     Categoryservice,
-    Adddoctorservice
+    Adddoctorservice,
+    AppointmentService
   ],
   bootstrap: [AppComponent]
 })

@@ -17,7 +17,7 @@ export class AddAdminComponent implements OnInit {
   admins: Array<AdminDTO> = [];
   adminss: Observable<AdminDTO[]>;
 
-  constructor( private adminservices: Addadminservice) { }
+  constructor(private adminservices: Addadminservice) { }
 
   ngOnInit(): void {
     this.reloadData();

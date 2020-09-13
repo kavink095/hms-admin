@@ -15,8 +15,8 @@ export class AddDoctorComponent implements OnInit {
 
   // tslint:disable-next-line: new-parens
   addDoc: AddDoctorDTO = new AddDoctorDTO;
-  admins: Array<AdminDTO> = [];
-  adminss: Observable<AdminDTO[]>;
+  docs: Array<AddDoctorDTO> = [];
+  docss: Observable<AddDoctorDTO[]>;
 
   selectedcategories: AdminDTO = new AdminDTO();
   tempcat: AdminDTO = null;
@@ -40,7 +40,7 @@ export class AddDoctorComponent implements OnInit {
   });
 
   ngOnInit(): void {
-
+    this.reloadData();
   }
 
   saveDoctor(): void {
@@ -74,16 +74,7 @@ export class AddDoctorComponent implements OnInit {
     );
   }
 
-  // loadAllAdmins(): void {
-  //   this.adminservices.getAllAdmins().subscribe(
-  //     (result) => {
-  //       console.log(this.admins);
-  //       this.admins = result;
-  //       console.log(this.admins);
-  //     }
-  //   );
-  // }
-  // tslint:disable-next-line: typedef
-
-
+  reloadData() {
+    this.docss = this.adddocservice.getDoctorList();
+  }
 }

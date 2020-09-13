@@ -219,17 +219,19 @@
                             <thead>
                                 <tr>
                                     <th>NIC</th>
-                                    <th>Name</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
                                     <th>Email</th>
                                     <th>Contact</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let admin of adminss | async">
-                                    <td>{{admin.adNIC}}</td>
-                                    <td>{{admin.adName}}</td>
-                                    <td>{{admin.adMail}}</td>
-                                    <td>{{admin.adMobile}}</td>
+                                <tr *ngFor="let docs of docss | async">
+                                    <td>{{docs.docNIC}}</td>
+                                    <td>{{docs.docFirstName}}</td>
+                                    <td>{{docs.docLastName}}</td>
+                                    <td>{{docs.docMail}}</td>
+                                    <td>{{docs.docMobile}}</td>
                                     <td><button class="btn btn-danger">Delete</button>
                                         <!-- <button (click)="updateEmployee(employee.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
                                 <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Details</button> *ngFor="let admin of admins"-->
