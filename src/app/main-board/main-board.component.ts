@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Authservice } from '../services/authservice';
 
 @Component({
   selector: 'app-main-board',
@@ -9,9 +10,13 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class MainBoardComponent implements OnInit {
   // formMain: FormGroup;
 
-  constructor() { }
+  constructor(private authService : Authservice) { }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    this.authService.logout();
   }
 
 }

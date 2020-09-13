@@ -14,12 +14,18 @@ import {Chargeservice} from '../app/services/chargeservice';
 import {Categoryservice} from '../app/services/categoryservice';
 import {Adddoctorservice} from '../app/services/adddoctorservice';
 
+import {Authguard} from '../app/services/authguard';
+import {Authservice} from '../app/services/authservice';
+
 import { MaintainceComponent } from './maintaince/maintaince.component';
 import { ChargesComponent } from './charges/charges.component';
 import { CategoryComponent } from './category/category.component';
 import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { AppointmentService } from './services/appointmentService';
+import { LoginComponent } from './login/login.component';
+
+
 
 @NgModule({
   declarations: [
@@ -31,7 +37,8 @@ import { AppointmentService } from './services/appointmentService';
     ChargesComponent,
     CategoryComponent,
     AddDoctorComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,10 @@ import { AppointmentService } from './services/appointmentService';
     Chargeservice,
     Categoryservice,
     Adddoctorservice,
-    AppointmentService
+    AppointmentService,
+    Authguard,
+    Authservice
+
   ],
   bootstrap: [AppComponent]
 })

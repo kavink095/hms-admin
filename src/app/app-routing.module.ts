@@ -9,10 +9,13 @@ import { CategoryComponent } from './category/category.component';
 import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 import { AddDoctorDTO } from './dtos/add-doctorDTO';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { Authguard } from './services/authguard';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  { path: 'main', component: MainBoardComponent },
+  { path: 'main', component: MainBoardComponent ,
+  canActivate: [Authguard]},
   { path: 'add-admin', component: AddAdminComponent },
   { path: 'create-admin', component: CreateAdminComponent },
   { path: 'maintaince', component: MaintainceComponent },
@@ -20,6 +23,7 @@ const routes: Routes = [
   { path: 'category', component: CategoryComponent },
   { path: 'addDoc', component: AddDoctorComponent },
   { path: 'apoi', component: AppointmentComponent },
+  { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/main', pathMatch: 'full' },
 ];
 
