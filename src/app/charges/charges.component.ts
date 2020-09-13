@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { ChargesDTO } from '../dtos/chargesDTO';
 import { Chargeservice } from '../services/chargeservice';
 
@@ -16,6 +17,9 @@ export class ChargesComponent implements OnInit {
   charges: ChargesDTO = new ChargesDTO;
   chargeList: Array<ChargesDTO> = [];
 
+  chs: Array<ChargesDTO> = [];
+  chss: Observable<ChargesDTO[]>;
+
   formCharge = new FormGroup({
     cid: new FormControl('', Validators.required),
     value: new FormControl('', Validators.required),
@@ -24,6 +28,7 @@ export class ChargesComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.reloadData();
   }
 
   saveCharge(): void {
@@ -45,6 +50,10 @@ export class ChargesComponent implements OnInit {
       }
     );
 
+  }
+
+  reloadData() {
+    this.chss = this.chargeservice.getAllCharges();
   }
 
 }

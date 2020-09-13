@@ -7,6 +7,9 @@ import { ChargesDTO } from '../dtos/chargesDTO';
 export const MAIN_URL = 'http://localhost:8084';
 const URL = '/api/v1/charges/saves';
 
+const urls = '/api/v1/charges';
+
+
 @Injectable()
 export class Chargeservice {
     constructor(private http: HttpClient) { }
@@ -16,6 +19,6 @@ export class Chargeservice {
     }
 
     getAllCharges(): Observable<Array<ChargesDTO>> {
-        return this.http.get<Array<ChargesDTO>>(MAIN_URL + URL);
+        return this.http.get<Array<ChargesDTO>>(MAIN_URL + urls);
     }
 }
